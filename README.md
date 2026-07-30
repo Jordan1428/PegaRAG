@@ -4,7 +4,7 @@ PegaRAG 是一個模組化、可擴展的檢索增強生成 (Retrieval-Augmented
 
 ## ✨ 核心特色 (Features)
 
-- **🧠 圖結構 RAG 處理管線 (Graph-based Pipeline)**：以 `graph.py`、`nodes.py` 與 `state.py` 為核心，採用狀態機與節點流程式設計，精準控制 LLM 的檢索與生成邏輯。
+- **🧠 圖結構 RAG 處理管線 (Graph-based Pipeline)**：以 `graph.py`、`nodes.py` 與 `state.py` 為核心，採用狀態機與節點流程式設計，控制 LLM 的檢索與生成邏輯，同時兼顧未來的可擴展性。
 - **📄 智慧文件載入與解析 (Ingestion)**：內建專屬的 `parser.py` 與 `indexer.py`，並在後端搭配獨立的 `chunker.py`，支援高精度文件切塊與向量化。
 - **📊 內建評估機制 (Evaluation)**：整合完整的 RAG 評估腳本 (`03_run_eval.py`)，可基於內建的 `eval_dataset.json/csv` 自動跑分並產出量化報告。
 - **🖥️ 友善的 Web UI**：前後端分離架構。後端使用 FastAPI 獨立處理 `llm_client.py` 與 `vector_store.py`；前端則透過 `app.py` 提供基於 Gradio 打造的互動式對話介面。
