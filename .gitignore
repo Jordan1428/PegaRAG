@@ -5,24 +5,35 @@ venv/
 env/
 .venv/
 
-# --- Python Cache ---
+# --- Python & Test Cache ---
 __pycache__/
 **/__pycache__/
 *.pyc
 *.pyo
 *.pyd
+.pytest_cache/
 
 # --- Vector Database ---
 **/chromadb/
 **/chroma_db/
 *.sqlite3
 
-# --- Uploads & Data (視需求保留或刪除) ---
+# --- Uploads, Data & Reports ---
 **/uploads/
 **/data/raw/
 **/data/others/
-
+**/eval_reports/
 *.pdf
+
+# --- Documents & Temp Files ---
+*.docx
+**/test.txt
 
 # --- Experiments & Scratch ---
 RAG/scratch/
+
+# --- OS & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
