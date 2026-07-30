@@ -64,7 +64,7 @@ source venv/bin/activate
 # 安裝 RAG 核心模組套件
 pip install -r RAG/requirements.txt
 
-# 安裝 UI 與後端服務套件
+# 安裝 UI 與後端服務套件(torch可自行替換cuda版本的)
 pip install -r UI/requirements.txt
 ```
 
