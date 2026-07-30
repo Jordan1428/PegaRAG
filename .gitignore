@@ -1,0 +1,25 @@
+# --- Environments & Secrets ---
+.env
+**/.env
+venv/
+env/
+.venv/
+
+# --- Python Cache ---
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Vector Database ---
+**/chromadb/
+**/chroma_db/
+*.sqlite3
+
+# --- Uploads & Data (視需求保留或刪除) ---
+**/uploads/
+**/data/raw/
+**/data/others/
+# 如果你希望連同所有 PDF 都不上傳，可以解除下面這行的註解
+*.pdf

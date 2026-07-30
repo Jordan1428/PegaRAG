@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "question": "(Assignment Q1) Summarize this document",
+    "ground_truth": "LightRAG is a RAG system combining graph-based text indexing with a dual-level retrieval framework, addressing three challenges: comprehensive retrieval, retrieval efficiency, and fast adaptation to new data; experiments show it outperforms NaiveRAG, HyDE, RQ-RAG, and GraphRAG across multiple datasets 2410.05779v3.pdf",
+    "reference": "Page 2, Introduction section, the three bullet points starting with \"In summary, the key contributions of this work are highlighted as follows\""
+  },
+  {
+    "id": "2",
+    "question": "(Assignment Q2) Compare LightRAG with GraphRAG",
+    "ground_truth": "Both use graph-based retrieval, but LightRAG consistently outperforms GraphRAG on large datasets like Agriculture, CS, and Legal (win rates ~51-64%), with the biggest edge in Diversity; GraphRAG requires traversing communities causing many API calls and full community reconstruction on updates, while LightRAG needs only one API call per query and updates incrementally without rebuilding 2410.05779v3.pdf",
+    "reference": "Page 7, Section 4.2 \"LightRAG's Superiority over GraphRAG\"; cost comparison on pages 9-10, Section 4.5 and Figure 2"
+  },
+  {
+    "id": "3",
+    "question": "(Assignment Q3) Performance of ablated versions of LightRAG",
+    "ground_truth": "The -High (removes high-level retrieval) and -Low (removes low-level retrieval) variants both show performance drops; the -Origin variant (removes raw text, keeps only graph) shows no significant decline and even improves on Agriculture and Mix, showing the graph index already captures key info effectively; the full Hybrid mode (LightRAG) achieves the most balanced performance",
+    "reference": "Pages 7-8, Section 4.3 \"Ablation Studies (RQ2)\" and Table 2"
+  },
+  {
+    "id": "4",
+    "question": "What three key challenges does LightRAG's architecture address?",
+    "ground_truth": "i) Comprehensive Information Retrieval ii) Enhanced Retrieval Efficiency iii) Rapid Adaptation to New Data",
+    "reference": "Page 2, Introduction section, where the three challenges are listed"
+  },
+  {
+    "id": "5",
+    "question": "What are the two levels in LightRAG's dual-level retrieval paradigm, and what does each handle?",
+    "ground_truth": "Low-Level Retrieval focuses on precise information about specific entities and their relationships; High-Level Retrieval addresses broader topics and themes, aggregating information across related entities",
+    "reference": "Pages 4-5, Section 3.2 \"Dual-Level Retrieval Paradigm\""
+  },
+  {
+    "id": "6",
+    "question": "Which LLM does LightRAG use by default in the experiments?",
+    "ground_truth": "GPT-4o-mini is used by default for all LLM-based operations",
+    "reference": "Page 6, Section 4.1 \"Implementation and Evaluation Details\""
+  },
+  {
+    "id": "7",
+    "question": "Which four datasets were used for evaluation, and what domains do they cover?",
+    "ground_truth": "Agriculture, CS (computer science), Legal, and Mix (literary, biographical, philosophical texts)",
+    "reference": "Pages 5-6, Section 4.1 \"Evaluation Datasets\""
+  },
+  {
+    "id": "8",
+    "question": "What four dimensions were used to evaluate answer quality?",
+    "ground_truth": "Comprehensiveness, Diversity, Empowerment, and Overall",
+    "reference": "Page 6, Section 4.1 \"Implementation and Evaluation Details,\" listed as points i)-iv)"
+  },
+  {
+    "id": "9",
+    "question": "How does LightRAG handle incremental knowledge base updates compared to GraphRAG?",
+    "ground_truth": "LightRAG processes new documents with the same indexing steps and merges the new node/edge sets into the existing graph without rebuilding; GraphRAG must dismantle its community structure and fully regenerate it, costing about 1,399?2?5,000 tokens",
+    "reference": "Pages 9-10, Section 4.5 \"Model Cost and Adaptability Analysis (RQ4)\""
+  },
+  {
+    "id": "10",
+    "question": "What three main functions are used in LightRAG's graph-based text indexing?",
+    "ground_truth": "R(·): extracts entities and relationships; P(·): LLM profiling to generate key-value pairs; D(·): deduplication to merge identical entities/relations",
+    "reference": "Page 3, Section 3.1 \"Graph-Based Text Indexing,\" where the three functions are described"
+  }
+]
