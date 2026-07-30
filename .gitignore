@@ -21,5 +21,8 @@ __pycache__/
 **/uploads/
 **/data/raw/
 **/data/others/
-# 如果你希望連同所有 PDF 都不上傳，可以解除下面這行的註解
+
 *.pdf
+
+# --- Experiments & Scratch ---
+RAG/scratch/
