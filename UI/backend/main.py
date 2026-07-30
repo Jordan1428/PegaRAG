@@ -109,12 +109,11 @@ def handle_map_reduce_summary(doc_id: str) -> Dict[str, Any]:
     combined = "\n\n".join(map_summaries)
     reduce_prompt = (
         "Synthesize the section summaries into a structured summary. "
-        "First identify the Document Type, self-determine 3-4 key focus dimensions suited for that type, and summarize under Markdown headings.\n\n"
+        "Self-determine 3-4 key focus dimensions suited for the document type, and summarize directly under Markdown headings.\n"
+        "Do NOT print any meta-header lines such as 'Document Type:' or 'Focus Dimensions:'. Start directly with the Markdown headings.\n\n"
         "Example 1 (Paper):\n"
         "Input: [Chunk 1]: LightRAG dual-level retrieval. [Chunk 2]: Outperforms GraphRAG with 99% cost reduction.\n"
         "Output:\n"
-        "Document Type: Academic Paper\n"
-        "Focus Dimensions: Core Innovation | Performance & Cost\n\n"
         "### Core Innovation\n"
         "- Combines graph indexing with dual-level retrieval for fast search.\n\n"
         "### Performance & Cost\n"
@@ -122,8 +121,6 @@ def handle_map_reduce_summary(doc_id: str) -> Dict[str, Any]:
         "Example 2 (Contract):\n"
         "Input: [Chunk 1]: NDA for source code. [Chunk 2]: 3-year obligation; breach leads to damages.\n"
         "Output:\n"
-        "Document Type: Legal Contract\n"
-        "Focus Dimensions: Scope | Obligations & Breach\n\n"
         "### Scope\n"
         "- Protects proprietary source code and trade secrets.\n\n"
         "### Obligations & Breach\n"
