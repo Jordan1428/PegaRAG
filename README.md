@@ -110,12 +110,3 @@ python UI/run.py
 執行此腳本後，系統將自動依序啟動：
 1. **FastAPI 核心後端**：預設運行於 `http://127.0.0.1:8000` (可瀏覽 `/docs` 查看 Swagger API 文件)。
 2. **Gradio 聊天介面**：預設運行於 `http://127.0.0.1:7860` (系統會自動在預設瀏覽器中為你開啟介面)。
-
----
-
-## 🧪 測試與開發 (Testing & Development)
-
-專案內建 `pytest` 單元測試，確保資料載入 (Ingestion) 與推理管線 (Pipeline) 的穩定性。開發期間可執行以下指令運行所有測試：
-```bash
-pytest RAG/tests/
-```
